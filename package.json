@@ -22,6 +22,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
+    "lint-staged": ">=8",
     "nodemon": "^1.19.4",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2",
@@ -46,8 +47,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint:fix",
-      "pre-push": "yarn lint && yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "jest": {
@@ -58,5 +58,12 @@
     "transform": {
       "^.+\\.(ts)$": "ts-jest"
     }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "yarn test",
+      "git add"
+    ]
   }
 }
