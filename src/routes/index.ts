@@ -7,4 +7,10 @@ router.get('/', (req, res) =>
   })
 )
 
+router.get('/params/:number', (req, res) =>
+  res.send({
+    number: req.params.number,
+  })
+)
+
 export default router
