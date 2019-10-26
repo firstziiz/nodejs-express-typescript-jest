@@ -14,9 +14,9 @@ describe('Simple Routes', () => {
 
   it('should be return 1 when get `/param/1`', async () => {
     const res = await request(app)
-      .get('/params/1')
+      .get('/params/2')
       .send({
-        number: 1,
+        number: 2,
       })
     expect(res.status).toEqual(200)
     expect(res.body).toHaveProperty('number')
