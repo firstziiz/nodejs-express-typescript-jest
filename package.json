@@ -4,22 +4,13 @@
   "main": "src/bin/server.js",
   "license": "MIT",
   "devDependencies": {
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-typescript": "^7.6.0",
+    "@types/compression": "^1.7.0",
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.1",
+    "@types/helmet": "^0.0.45",
     "@types/jest": "^24.0.19",
+    "@types/morgan": "^1.7.37",
     "@types/supertest": "^2.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.5.0",
-    "@typescript-eslint/parser": "^2.5.0",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.20.0",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "lint-staged": ">=8",
@@ -37,13 +28,16 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
-    "morgan": "^1.9.1"
+    "knex": "^0.20.9",
+    "morgan": "^1.9.1",
+    "mysql": "^2.18.1",
+    "objection": "^2.1.2"
   },
   "scripts": {
     "dev": "nodemon",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet",
-    "lint:fix": "tsc --noEmit && eslint '*/**/*.{js,ts}' --quiet --fix",
-    "test": "jest"
+    "test": "jest",
+    "migrate": "knex migrate:latest",
+    "migrate:down": "knex migrate:down"
   },
   "husky": {
     "hooks": {
@@ -61,7 +55,6 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn lint",
       "yarn test",
       "git add"
     ]

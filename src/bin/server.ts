@@ -1,4 +1,4 @@
-import * as http from 'http'
+import http from 'http'
 import app from '../app'
 require('dotenv').config()
 
