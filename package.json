@@ -35,7 +35,7 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "migrate": "knex migrate:latest",
     "migrate:down": "knex migrate:down"
   },
