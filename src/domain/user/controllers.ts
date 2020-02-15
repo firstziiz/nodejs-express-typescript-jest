@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { User, Permission, Group } from './model'
+import { User, Permission, Group } from './models'
 
 export const getAllUsers: express.RequestHandler = async (req, res) => {
   const users = await User.query()

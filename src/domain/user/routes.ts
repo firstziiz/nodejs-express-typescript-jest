@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllUsers, getAllPermission, getAllGroups } from './controller'
+import { getAllUsers, getAllPermission, getAllGroups } from './controllers'
 
 export const router = express.Router()
 
